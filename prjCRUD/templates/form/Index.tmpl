@@ -1,0 +1,32 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <h2> Tabela De Usuários Registrados: </h2>
+    <table border="1">
+      <thead>
+      <tr>
+        <td>ID</td>
+        <td>NOME</td>
+        <td>EMAIL</td>
+		<td>CELULAR</td>
+        <td>MOSTRAR</td>
+        <td>EDITAR</td>
+        <td>DELETAR</td>
+      </tr>
+       </thead>
+       <tbody>
+    {{ range . }}
+      <tr>
+        <td>{{ .Id }}</td>
+        <td> {{ .Name }} </td>
+        <td>{{ .Email }} </td> 
+		<td>{{ .Celular }} </td> 
+        <td><a href="/show?id={{ .Id }}">mostrar</a></td>
+        <td><a href="/edit?id={{ .Id }}">editar</a></td>
+        <td><a href="/delete?id={{ .Id }}">deletar</a><td>
+      </tr>
+    {{ end }}
+       </tbody>
+    </table>
+  {{ template "Footer" }}
+{{ end }}
