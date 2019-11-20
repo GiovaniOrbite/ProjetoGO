@@ -1,0 +1,3 @@
+Usar o seguinte comando para instalar drivers nescessários do banco de dados MySQL:
+
+go get -u github.com/go-sql-driver/mysql
